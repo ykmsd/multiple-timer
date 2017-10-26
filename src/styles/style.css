@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url(../../node_modules/font-awesome/css/font-awesome.css);
+body {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif; }
+
+button {
+  font-family: "Roboto", sans-serif; }
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+
+.timers-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(20rem * 2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.timers-container .timer-container:nth-of-type(1) {
+  background-color: #FFC107; }
+  .timers-container .timer-container:nth-of-type(1) .start-button {
+    color: #ff9807; }
+  .timers-container .timer-container:nth-of-type(1) .pause-button, .timers-container .timer-container:nth-of-type(1) .reset-button {
+    color: #ff9807; }
+
+.timers-container .timer-container:nth-of-type(2) {
+  background-color: #8BC34A; }
+  .timers-container .timer-container:nth-of-type(2) .start-button {
+    color: #9fc34a; }
+  .timers-container .timer-container:nth-of-type(2) .pause-button, .timers-container .timer-container:nth-of-type(2) .reset-button {
+    color: #9fc34a; }
+
+.timers-container .timer-container:nth-of-type(3) {
+  background-color: #3949AB; }
+  .timers-container .timer-container:nth-of-type(3) .start-button {
+    color: #395cab; }
+  .timers-container .timer-container:nth-of-type(3) .pause-button, .timers-container .timer-container:nth-of-type(3) .reset-button {
+    color: #395cab; }
+
+.timers-container .timer-container:nth-of-type(4) {
+  background-color: #D81B60; }
+  .timers-container .timer-container:nth-of-type(4) .start-button {
+    color: #d81b80; }
+  .timers-container .timer-container:nth-of-type(4) .pause-button, .timers-container .timer-container:nth-of-type(4) .reset-button {
+    color: #d81b80; }
+
+.set-timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%; }
+
+.timer-container {
+  width: 20rem;
+  height: 20rem;
+  text-align: center;
+  position: relative; }
+  .timer-container form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+
+.default-name {
+  border-bottom: 2px solid transparent;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  position: relative;
+  cursor: pointer; }
+  .default-name:hover {
+    border-bottom: 2px solid white; }
+
+.fa.fa-pencil {
+  color: #212121;
+  font-size: .9rem;
+  position: absolute;
+  top: .2rem;
+  right: -1rem; }
+
+.timer-container input[name="name"] {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  width: 40%;
+  height: 2rem; }
+
+.timer-container input[name="minutes"] {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  display: block;
+  font-size: 6rem;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  width: 40%;
+  height: 40%;
+  padding: 1rem; }
+  .timer-container input[name="minutes"]::placeholder {
+    color: #212121;
+    font-size: 1.2rem; }
+
+.start-button {
+  background: white;
+  border: 1px solid #F5F5F5;
+  border-radius: 2px;
+  width: 50%;
+  height: 2rem;
+  font-size: 1.5rem; }
+
+.add-new-timer {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 10rem; }
+
+.active-timer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%; }
+
+.active-timer-name {
+  font-size: 2rem;
+  margin: 0; }
+
+.display-timer {
+  font-size: 6rem; }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; }
+
+.pause-button, .reset-button {
+  width: 25%;
+  background: white;
+  border: 1px solid #F5F5F5;
+  border-radius: 2px;
+  color: #212121;
+  cursor: pointer;
+  font-size: 1.2rem; }

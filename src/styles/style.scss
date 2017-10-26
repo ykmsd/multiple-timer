@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import './base';
+@import '../../node_modules/font-awesome/css/font-awesome.css'; 
+
+body {
+  font-size: 62.5%;
+  font-family: $font-stack;
+}
+
+button {
+  font-family: $font-stack;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.timers-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(#{$box-size} * 2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// timer 
+
+.timers-container .timer-container:nth-of-type(1) {
+  background-color: $primary-orange;
+  .start-button {
+    color: adjust-hue($primary-orange, -10deg);
+  }
+  .pause-button {
+    color: adjust-hue($primary-orange, -10deg);
+  }
+}
+
+.timers-container .timer-container:nth-of-type(2) {
+  background-color: $primary-green;
+  .start-button {
+    color: adjust-hue($primary-green, -10deg);
+  }
+  .pause-button {
+    color: adjust-hue($primary-green, -10deg);
+  }
+}
+
+.timers-container .timer-container:nth-of-type(3) {
+  background-color: $primary-blue;
+  .start-button {
+    color: adjust-hue($primary-blue, -10deg);
+  }
+  .pause-button {
+    color: adjust-hue($primary-blue, -10deg);
+  }
+}
+
+.timers-container .timer-container:nth-of-type(4) {
+  background-color: $primary-pink;
+  .start-button {
+    color: adjust-hue($primary-pink, -10deg);
+  }
+  .pause-button {
+    color: adjust-hue($primary-pink, -10deg);
+  }
+}
+
+.set-timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.timer-container {
+  width: $box-size;
+  height: $box-size;
+  text-align: center;
+  position: relative;
+  
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.default-name {
+  border-bottom: 2px solid transparent;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid white;
+  }
+}
+
+.fa.fa-pencil {
+  color: $font-color;
+  font-size: .9rem;
+  position: absolute;
+  top: .2rem;
+  right: -1rem;
+}
+
+.timer-container input[name="name"]{
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 2rem;
+  font-family: $font-stack;
+  outline: none;
+  width: 40%;
+  height: 2rem;
+}
+
+.timer-container input[name="minutes"]{
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  display: block;
+  font-size: 6rem;
+  font-family: $font-stack;
+  outline: none;
+  width: 40%;
+  height: 40%;
+  padding: 1rem;
+
+  &::placeholder {
+    color: $font-color;
+    font-size: 1.2rem;
+  }
+}
+
+.start-button {
+  background: white;
+  border: 1px solid #F5F5F5;
+  border-radius: 2px;
+  width: 50%;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+
+// New timer 
+
+.add-new-timer {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 10rem;
+}
+
+// Display timer 
+
+.active-timer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.active-timer-name {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.display-timer {
+  font-size: 6rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.pause-button {
+  width: 25%;
+  background: white;
+  border: 1px solid #F5F5F5;
+  border-radius: 2px;
+  color: $font-color;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.reset-button {
+  @extend .pause-button
+}
+
