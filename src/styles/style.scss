@@ -75,6 +75,18 @@ button {
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  position: relative;
+}
+
+.error {
+  border-bottom: 2px solid red;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $font-color;
+  top: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .timer-container {
@@ -203,4 +215,3 @@ button {
 .reset-button {
   @extend .pause-button
 }
-

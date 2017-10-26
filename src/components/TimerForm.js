@@ -24,6 +24,7 @@ const ActiveTimer = props => (
 
 const SetTimer = props => (
   <div className="set-timer">
+  {props.error && <div className="error">{props.error}</div> }
     <form onSubmit={props.onSubmit}>
       {
         props.editName ?
@@ -57,6 +58,7 @@ class TimerForm extends Component {
       remainderSeconds: '',
       pause: false,
       editName: false,
+      error: '',
     };
   }
   handleEditName = () => {
@@ -79,15 +81,23 @@ class TimerForm extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.dispatch(startTimer({
-      name: this.state.name,
-      seconds: this.state.totalInSeconds,
-    }));
-    this.setState({
-      active: true,
-      editName: false,
-    });
-    this.setUpTimer(this.state.totalInSeconds);
+    if (!this.state.totalInSeconds) {
+      console.log('error');
+      this.setState({
+        error: 'Please set a time 👇🏼',
+      });
+    } else {
+      this.props.dispatch(startTimer({
+        name: this.state.name,
+        seconds: this.state.totalInSeconds,
+      }));
+      this.setState({
+        active: true,
+        error: '',
+        editName: false,
+      });
+      this.setUpTimer(this.state.totalInSeconds);
+    }
   }
   handlePause = () => {
     clearInterval(this.timer);
@@ -176,6 +186,7 @@ class TimerForm extends Component {
           name={this.state.name}
           minutes={this.state.minutes}
           editName={this.state.editName}
+          error={this.state.error}
           handleEditName={this.handleEditName}
           onSubmit={this.onSubmit}
           onTimeChange={this.onTimeChange}
