@@ -195,6 +195,9 @@ button {
   color: $font-color;
   cursor: pointer;
   font-size: 1.2rem;
+  &:disabled {
+    display: none;
+  }
 }
 
 .reset-button {

@@ -9,12 +9,13 @@ const ActiveTimer = props => (
       {props.completed ? "Done!" : `${props.remainderMinutes}:${props.remainderSeconds < 10 ? 0 : ''}${props.remainderSeconds}`}
     </div>
     <div className="buttons">
-      {
-        props.pause || !props.completed ? 
-        <button className="pause-button" onClick={props.handleResume}>Resume</button>
-        : 
-        <button className="pause-button" onClick={props.handlePause}>Pause</button>
-      }
+    {
+      props.pause ?
+      <button className="pause-button" onClick={props.handleResume}>Resume</button>
+      : 
+      <button className="pause-button" onClick={props.handlePause} disabled={props.completed}>Pause</button>
+    }
+      
       <button className="reset-button" onClick={props.handleReset}>Reset</button>
     </div>
 
@@ -127,6 +128,8 @@ class TimerForm extends Component {
     this.props.dispatch(resetTimer({
       name: this.state.name,
     }));
+    this.sound.pause();
+    this.sound.currentTime = 0;
   }
   setUpTimer(seconds) {
     const now = Date.now();
@@ -136,6 +139,7 @@ class TimerForm extends Component {
     this.timer = setInterval(() => {
       const secondsLeft = Math.round(((end - Date.now()) / 1000));
       if (secondsLeft < 0) {
+        this.sound.play();
         clearInterval(this.timer);
         this.setState({
           completed: true,
@@ -155,7 +159,6 @@ class TimerForm extends Component {
     });
   }
   render() {
-    console.log(this.state.totalInSeconds);
     return (
       <div className="timer-container">
       {this.state.active ?
