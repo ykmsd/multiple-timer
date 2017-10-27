@@ -1,3 +1,3 @@
-# Multiple Timer 
+# Multiple Timers
 
-Demo: https://ykmsd.github.io/multiple-timer/
+Demo: https://ykmsd.github.io/multiple-timers/

@@ -1,8 +1,8 @@
 {
-  "name": "multiple-timer",
+  "name": "multiple-timers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ykmsd.github.io/multiple-timer",
+  "homepage": "https://ykmsd.github.io/multiple-timers",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "node-sass-chokidar": "0.0.3",
