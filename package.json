@@ -1,7 +1,8 @@
 {
-  "name": "timer",
+  "name": "multiple timer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ykmsd.github.io/multiple-timer",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "node-sass-chokidar": "0.0.3",
@@ -20,13 +21,15 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy" : "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^1.0.0"
   }
 }
